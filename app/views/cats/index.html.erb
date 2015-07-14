@@ -1,0 +1,18 @@
+<h2>CATS</h2>
+
+
+  <% @cats.each do |cat| %>
+    <%= link_to cat.name, cat_url(cat), class: 'btn btn-primary' %>
+    <br>
+    <br>
+  <% end %>
+<br>
+
+<%= link_to "Create new cat!", new_cat_url, class: 'btn btn-success' %>
+
+<br>
+<%= link_to "Rent a cat!", new_cat_rental_request_url, class: 'btn btn-info' %>
+<br>
+<br>
+<%= image_tag "cat.jpg" %>
+<br>
