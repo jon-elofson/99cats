@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dqlsito7j
+  api_key: '771145579922231'
+  api_secret: "-mg5H59hBX_M8ilbshGSkc738n8"
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dqlsito7j
+  api_key: '771145579922231'
+  api_secret: "-mg5H59hBX_M8ilbshGSkc738n8"
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dqlsito7j
+  api_key: '771145579922231'
+  api_secret: "-mg5H59hBX_M8ilbshGSkc738n8"
+  enhance_image_tag: true
+  static_image_support: false

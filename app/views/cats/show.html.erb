@@ -1,34 +1,42 @@
-<h2><%= @cat.name %></h2>
 
-<table class="table">
-  <% ["Color", "Sex", "Age", "Description"].each do |attr| %>
-    <tr>
-      <td><%= attr %></td>
-      <td><%= @cat.send(attr.downcase) %></td>
-    </tr>
-  <% end %>
-</table>
-<br>
 
-<h3> Requests </h3>
-<table class="table">
-  <tr>
-    <td>Start Date</td>
-    <td>End Date</td>
-    <td>Status</td>
-  </tr>
-  <% @cat.rental_requests.each do |request| %>
-    <tr>
-      <td><%= request.start_date.to_date %></td>
-      <td><%= request.end_date.to_date %></td>
-      <td><%= request.status %></td>
-      <% if request.pending? %>
-      <td><%= button_to "Approve", approve_cat_rental_request_url(request.id), class: "btn btn-success"%></td>
-      <td><%= button_to "Deny", deny_cat_rental_request_url(request.id), class: "btn btn-danger"%></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
-<br>
+<div id="main-container" class="container-fluid">
+  <div class="row">
+    <div class="col-xs-9">
+      <h2><%= @cat.name %></h2>
 
-<%= link_to "Update this cat", edit_cat_url(@cat), class: "btn btn-info btn-lg" %>
+      <table class="table">
+        <% ["Color", "Sex", "Age", "Description"].each do |attr| %>
+          <tr>
+            <td><%= attr %></td>
+            <td><%= @cat.send(attr.downcase) %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+
+      <h3> Requests </h3>
+      <table class="table">
+        <tr>
+          <td>Start Date</td>
+          <td>End Date</td>
+          <td>Status</td>
+        </tr>
+        <% @cat.rental_requests.each do |request| %>
+          <tr>
+            <td><%= request.start_date.to_date %></td>
+            <td><%= request.end_date.to_date %></td>
+            <td><%= request.status %></td>
+            <% if request.pending? %>
+            <td><%= button_to "Approve", approve_cat_rental_request_url(request.id), class: "btn btn-success"%></td>
+            <td><%= button_to "Deny", deny_cat_rental_request_url(request.id), class: "btn btn-danger"%></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+
+      <%= link_to "Update this cat", edit_cat_url(@cat), class: "btn btn-info btn-lg" %>
+    </div>
+  </div>
+</div>
